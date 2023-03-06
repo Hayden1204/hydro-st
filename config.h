@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrains Mono Medium:pixelsize=17:antialias=true:autohint=true";
-static int borderpx = 6;
+static char *font = "JetBrains Mono Medium:pixelsize=19:antialias=true:autohint=true";
+static int borderpx = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -236,14 +236,18 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
+	{ TERMMOD,              XK_O,           zoom,           {.f = +1} },
+	{ TERMMOD,              XK_Y,           zoom,           {.f = -1} },
 	{ TERMMOD,              XK_L,           zoom,           {.f = +5} },
 	{ TERMMOD,              XK_H,           zoom,           {.f = -5} },
-	{ TERMMOD,              XK_U,           zoomreset,      {.f =  0} },
+	{ TERMMOD,              XK_M,           zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+ 	{ TERMMOD,              XK_I,           kscrollup,      {.i =  1} },
+ 	{ TERMMOD,              XK_U,           kscrolldown,    {.i =  1} },
  	{ TERMMOD,              XK_K,           kscrollup,      {.i =  3} },
  	{ TERMMOD,              XK_J,           kscrolldown,    {.i =  3} },
 	{ MODKEY,               XK_1,           selectscheme,   {.i =  0} },
